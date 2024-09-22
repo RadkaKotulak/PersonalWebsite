@@ -1,0 +1,166 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: #ffffff;
+    background-color: #181818;
+}
+
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #5a5af1;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.395);
+}
+
+h1, h2 {
+    margin: 0;
+    color: #ffffff;
+}
+
+.intro {
+    margin: 20px 0;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+    color: white;
+}
+
+.highlight {
+    text-decoration: underline;
+    color: #ffffff;
+}
+
+.cv-section {
+    display: flex; /* Use flexbox to align the CV sections horizontally */
+    justify-content: space-between; /* Space between the CVs */
+    gap: 20px; /* Optional: Adds some space between the two CV sections */
+    margin-top: 30px;
+}
+
+.main {
+    display: flex; /* Use flexbox to align items horizontally */
+    justify-content: center; /* Center the images */
+    gap: 160px; /* Optional: Space between images */
+    margin-top: 20px; /* Optional: Add some space above */
+}
+
+.cv {
+    background: rgb(95, 95, 95);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 45%; /* Ensure each CV takes up equal width */
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cv:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+iframe {
+    width: 100%; /* Ensure iframe takes full width of its parent */
+    height: 810px; /* Set a fixed height for consistency */
+    border: none;
+    border-radius: 5px;
+}
+
+a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+a:hover {
+    background-color: #0056b3;
+}
+
+.center {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.image-container {
+    align-items: center;
+    position: relative; /* Necessary for positioning */
+    display: inline; /* Keeps the image dimensions */
+    box-shadow: 0 0 0 5px #000000; /* Creates a 'border' effect */
+    border-radius: 20px 40px;
+    background-color: #181818;
+    
+}
+
+/* Image styles */
+.bordered-image {
+    display: inline; /* Prevents extra space below the image */
+    border-radius: inherit; /* Matches the border radius of the container */
+    transition: transform 0.9s ease; /* Smooth transition for rotation */
+    filter: drop-shadow(2px 6px 8px rgb(28, 117, 252))
+}
+
+/* Overlay text */
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(7, 3, 59); /* Text color */
+    font-size: 60px; /* Text size */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease; /* Smooth transition for opacity */
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #5f9ee6, 0 0 40px #4a31d6, 0 0 50px #0d00fa, 0 0 60px #16064d, 0 0 70px #101330;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #4d82ff, 0 0 40px #4dbbff, 0 0 50px #040070, 0 0 60px #040070, 0 0 70px #040070, 0 0 80px #040070;
+  }
+}
+
+
+/* Hover effects */
+.image-container:hover .bordered-image {
+    transform: scale(1.1); /* Scale the image up */
+    filter: drop-shadow(2px 6px 8px rgba(28, 117, 252, 0.8)); /* Add drop shadow on hover */
+}
+
+.image-container:hover .overlay {
+    opacity: 1; /* Show text on hover */
+}
+@keyframes border-wave {
+    0% {
+        box-shadow: 0 0 0 5px #000000; /* Initial state */
+    }
+    25% {
+        box-shadow: 0 0 0 5px rgba(12, 57, 124, 0.5); /* Slightly expand */
+    }
+    50% {
+        box-shadow: 0 0 0 5px rgba(28, 117, 252, 0.5); /* Return to original */
+    }
+    75% {
+        box-shadow: 0 0 0 5px rgba(28, 117, 252, 0.5); /* Slightly expand again */
+    }
+    100% {
+        box-shadow: 0 0 0 5px #000000; /* Back to solid border */
+    }
+}
+
+/* Combine border animation with rotation */
+.image-container {
+    animation: border-wave 2s infinite linear; /* Border wave animation */
+}
+
